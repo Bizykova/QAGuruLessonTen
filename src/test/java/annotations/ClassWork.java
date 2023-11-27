@@ -19,7 +19,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class ClassWork {
 
     @BeforeEach
-    void BeforeEach() {
+    void setUp() {
         Configuration.pageLoadStrategy = "eager";
     }
 
@@ -52,7 +52,7 @@ public class ClassWork {
     @ParameterizedTest
     @DisplayName("двойной аргумент параметризированный тест")
     @Tag("Smock")
-    void doubleArgument_findTheValuesInTheSearchBarTest(String value, String expected) {
+    void doubleArgumentFindTheValuesInTheSearchBarTest(String value, String expected) {
         open("https://www.citilink.ru/");
         $("[name=text]").setValue(value).pressEnter();
         $("h1").shouldHave(text(expected));

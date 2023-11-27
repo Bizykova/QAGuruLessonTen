@@ -15,13 +15,10 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class HomeWork {
-    SelenideElement email = $("#email");
-    SelenideElement password = $("#password");
 
     @BeforeEach
-    void BeforeEach() {
+    void setUp() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
     }
 
 
@@ -54,7 +51,7 @@ public class HomeWork {
     })
     @ParameterizedTest
     @DisplayName("двойной аргумент параметризированный тест")
-    void doubleArgument_findTheValuesInTheSearchBar(String value, String expected) {
+    void doubleArgumentFindTheValuesInTheSearchBar(String value, String expected) {
         open("https://www.citilink.ru/");
         $("[name=text]").setValue(value).pressEnter();
         $("h1").shouldHave(text(expected));
@@ -66,7 +63,7 @@ public class HomeWork {
     @ParameterizedTest(name = "первый аогумент(0) второй аргумент(1)")
     @DisplayName("двойной аргумент параметризированный тест")
     @Tag("citilink")
-    void doubleArgument_findTheValuesInTheSearchBar_Filed(String value, String expected) {
+    void doubleArgumentFfindTheValuesInTheSearchBar_Filed(String value, String expected) {
         open("https://www.citilink.ru/");
         $("[name=text]").setValue(value).pressEnter();
         $("h1").shouldHave(text(expected));
