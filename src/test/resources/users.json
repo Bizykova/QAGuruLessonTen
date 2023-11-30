@@ -1,0 +1,11 @@
+  {
+    "userId": "122",
+    "firstName": "Masha",
+    "lastName": "Busya",
+    "phone": "8976999",
+    "pets" : {
+        "name": "Rex",
+        "type": "dog",
+        "age": 3
+      }
+  }
