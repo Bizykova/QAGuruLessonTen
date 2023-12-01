@@ -31,5 +31,6 @@ public class SelenideFilesTest {
         open("https://fineuploader.com/demos.html");
         $("input[type='file']").uploadFromClasspath("folder/rous.png");
         $(".qq-uploader-selector").shouldHave(text("rous.png"));
+
     }
 }

@@ -5,7 +5,6 @@ public class User {
     private String firstName;
     private String lastName;
     private String phone;
-
     private Pet pets;
 
     public Pet getPets() {
@@ -31,7 +30,6 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
 
 
     public String getUserId() {

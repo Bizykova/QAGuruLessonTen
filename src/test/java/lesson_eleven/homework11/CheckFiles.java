@@ -11,9 +11,6 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-
-
 
 public class CheckFiles {
     String testFolderPath = "src/test/resources/";
