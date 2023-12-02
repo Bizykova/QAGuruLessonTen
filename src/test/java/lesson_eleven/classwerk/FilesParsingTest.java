@@ -2,8 +2,11 @@ package lesson_eleven.classwerk;
 
 import com.codeborne.pdftest.PDF;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.codeborne.xlstest.XLS;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
@@ -12,6 +15,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FilesParsingTest {
+    @BeforeEach
+    void setUp(){
+        SelenideLogger.addListener("allure",new AllureSelenide());
+    }
     @Test
     void  pdfFileParsingTest () throws Exception {
         open("https://junit.org/junit5/docs/current/user-guide/");

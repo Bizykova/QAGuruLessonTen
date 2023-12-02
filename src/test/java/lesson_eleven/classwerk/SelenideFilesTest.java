@@ -1,6 +1,9 @@
 package lesson_eleven.classwerk;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,6 +16,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideFilesTest {
+    @BeforeEach
+    void setUp(){
+        SelenideLogger.addListener("allure",new AllureSelenide());
+    }
     @Test
     void downloadFileTest() throws IOException {
         open("https://github.com/junit-team/junit5/blob/main/README.md");

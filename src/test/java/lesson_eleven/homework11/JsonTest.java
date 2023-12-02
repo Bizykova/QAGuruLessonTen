@@ -1,14 +1,12 @@
-package lesson_eleven.homework11.json;
+package lesson_eleven.homework11;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lesson_eleven.homework11.json.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
-
-import static com.google.common.base.CharMatcher.is;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class JsonTest {
@@ -28,7 +26,6 @@ public class JsonTest {
             Assertions.assertEquals(newUser.getPhone(), "8976999");
             Assertions.assertEquals(newUser.getPets().getName(), "Rex");
         }
-
     }
 }
 
