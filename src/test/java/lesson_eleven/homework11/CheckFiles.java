@@ -1,10 +1,14 @@
 package lesson_eleven.homework11;
 
 import com.codeborne.pdftest.PDF;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.codeborne.xlstest.XLS;
 import com.opencsv.CSVReader;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.poi.ss.usermodel.Cell;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
@@ -13,6 +17,11 @@ import java.io.InputStreamReader;
 
 
 public class CheckFiles {
+    @BeforeEach
+    void setUp(){
+        SelenideLogger.addListener("allure",new AllureSelenide());
+        Configuration.pageLoadStrategy = "eager";
+    }
     String testFolderPath = "src/test/resources/";
     @Test
     public void  pdfTest() throws Exception{

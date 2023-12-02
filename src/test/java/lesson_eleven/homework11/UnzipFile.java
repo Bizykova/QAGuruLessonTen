@@ -1,5 +1,9 @@
 package lesson_eleven.homework11;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
@@ -8,6 +12,11 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class UnzipFile {
+    @BeforeEach
+    void setUp(){
+        SelenideLogger.addListener("allure",new AllureSelenide());
+        Configuration.pageLoadStrategy = "eager";
+    }
     @Test
     void unZipFile(){
         String testFolderPath = "src/test/resources/";

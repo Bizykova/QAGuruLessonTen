@@ -19,6 +19,7 @@ public class SelenideFilesTest {
     @BeforeEach
     void setUp(){
         SelenideLogger.addListener("allure",new AllureSelenide());
+        Configuration.pageLoadStrategy = "eager";
     }
     @Test
     void downloadFileTest() throws IOException {

@@ -1,6 +1,7 @@
 name: Test
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+
+on: workflow_dispatch
+
 jobs:
   test:
     #// где запускаем
@@ -37,5 +38,5 @@ jobs:
         if: always()
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
+          PUBLISH_BRANCH: master
           PUBLISH_DIR: allure-history

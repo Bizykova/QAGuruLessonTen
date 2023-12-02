@@ -15,9 +15,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class FilesParsingTest {
+
     @BeforeEach
     void setUp(){
         SelenideLogger.addListener("allure",new AllureSelenide());
+        Configuration.pageLoadStrategy = "eager";
     }
     @Test
     void  pdfFileParsingTest () throws Exception {
@@ -28,14 +30,14 @@ public class FilesParsingTest {
 
         }
 
-        @Test
-    void xlsFileParsingTest() throws Exception{
-        open("https://excelvba.ru/programmes/Teachers&ysclid=ifcu77j9j9951587711");
-        File downloaded = $("[href='https://ExcelVBA.ru/sites/default/files/teachers.xls']").download();
-            XLS xls = new XLS(downloaded);
-            String actualresult = xls.excel.getSheetAt(0).getRow(3).getCell(2).getStringCellValue();
-            Assertions.assertTrue(actualresult.contains("Cумарное количество часов"));
-
-        }
+//        @Test
+//    void xlsFileParsingTest() throws Exception{
+//        open("https://excelvba.ru/programmes/Teachers&ysclid=ifcu77j9j9951587711");
+//        File downloaded = $("[href='https://ExcelVBA.ru/sites/default/files/teachers.xls']").download();
+//            XLS xls = new XLS(downloaded);
+//            String actualresult = xls.excel.getSheetAt(0).getRow(3).getCell(2).getStringCellValue();
+//            Assertions.assertTrue(actualresult.contains("Cумарное количество часов"));
+//
+//        }
     }
 

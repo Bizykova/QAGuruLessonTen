@@ -1,5 +1,6 @@
 package lessonTwelth.classwork;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,10 +14,11 @@ import static io.qameta.allure.Allure.step;
 
 public class StepsTest {
     @BeforeEach
-    public void setUp(){
-        SelenideLogger.addListener("allure",new AllureSelenide());
-
+    public void setUp() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        Configuration.pageLoadStrategy = "eager";
     }
+
 
     private final String REPOSITORY = "eroshenkoam/allure-example";
     private final int ISSUES = 80;
@@ -33,11 +35,11 @@ public class StepsTest {
         step("кликнуть по ссылке репозитория" + REPOSITORY, () -> {
             $(".Box-sc-g0xbh4-0.search-title a").click();
         });
-        step("Открываем tab Issues"+ ISSUES, () -> {
+        step("Открываем tab Issues" + ISSUES, () -> {
             $("ul.UnderlineNav-body a#issues-tab").click();
         });
         step("Проверяем наличие Issues с номером " + ISSUES, () -> {
-            $(withText("#"+ISSUES)).shouldHave(text("80"));
+            $(withText("#" + ISSUES)).shouldHave(text("80"));
         });
     }
 

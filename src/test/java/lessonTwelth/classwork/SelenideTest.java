@@ -1,7 +1,9 @@
 package lessonTwelth.classwork;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -9,6 +11,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideTest {
+    @BeforeEach
+    void setUp() {
+        Configuration.pageLoadStrategy = "eager";
+    }
     @Test
     public void selenideTest(){
         SelenideLogger.addListener("allure",new AllureSelenide());

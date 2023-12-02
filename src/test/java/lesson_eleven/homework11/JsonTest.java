@@ -1,8 +1,12 @@
 package lesson_eleven.homework11;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.selenide.AllureSelenide;
 import lesson_eleven.homework11.json.User;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.InputStreamReader;
@@ -10,6 +14,11 @@ import java.io.Reader;
 
 
 public class JsonTest {
+    @BeforeEach
+    void setUp(){
+        SelenideLogger.addListener("allure",new AllureSelenide());
+        Configuration.pageLoadStrategy = "eager";
+    }
     private ClassLoader cl = JsonTest.class.getClassLoader();
 
     @Test

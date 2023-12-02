@@ -1,12 +1,19 @@
 package lessonTwelth.classwork;
 
+import com.codeborne.selenide.Configuration;
 import io.qameta.allure.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
 
 public class LabelsTest {
+
+    @BeforeEach
+    void setUp() {
+        Configuration.pageLoadStrategy = "eager";
+    }
     @Test
     @Feature("Issue в репозитории")
     @Story("Создание Issue")
