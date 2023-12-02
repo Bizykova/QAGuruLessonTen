@@ -1,6 +1,5 @@
 package lessonTwelth.classwork;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,11 +12,11 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class StepsTest {
-//    @BeforeEach
-//    public void setUp{
-//        SelenideLogger.addListener("allure",new AllureSelenide());
-//        Configuration.holdBrowserOpen = true;
-//    }
+    @BeforeEach
+    public void setUp(){
+        SelenideLogger.addListener("allure",new AllureSelenide());
+
+    }
 
     private final String REPOSITORY = "eroshenkoam/allure-example";
     private final int ISSUES = 80;
