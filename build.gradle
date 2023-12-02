@@ -69,10 +69,10 @@ compileTestJava {
 test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
-    systemProperty 'allure.link.tms.pattern', 'https://jira.atlassian.com/browse/{}'
-    systemProperty 'allure.link.issue.pattern', 'https://jira.atlassian.com/browse/{}'
-
-    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
+//    systemProperty 'allure.link.tms.pattern', 'https://jira.atlassian.com/browse/{}'
+//    systemProperty 'allure.link.issue.pattern', 'https://jira.atlassian.com/browse/{}'
+//
+//    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
 }
 
 configurations {
