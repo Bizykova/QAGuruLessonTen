@@ -1,4 +1,4 @@
-package lessonTwelth.classwork;
+package lesson_twelve.classwork;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
@@ -37,7 +37,7 @@ public class WebSteps {
         $("ul.UnderlineNav-body a#issues-tab").click();
     }
     @Step("Проверяем наличие Issues с номером { ISSUES}")
-    public void shuuldSeeIsssueWithNumber(int issues){
+    public void shouldSeeIssueWithNumber(int issues){
         $(withText("#"+issues)).shouldHave(text("80"));
     }
 

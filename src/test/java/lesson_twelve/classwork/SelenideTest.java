@@ -1,4 +1,4 @@
-package lessonTwelth.classwork;
+package lesson_twelve.classwork;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;

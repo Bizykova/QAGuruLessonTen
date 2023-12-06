@@ -1,4 +1,4 @@
-package lessonTwelth.classwork;
+package lesson_twelve.classwork;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -50,6 +50,6 @@ public class StepsTest {
         steps.searchForRepository(REPOSITORY);
         steps.clickOnRepositoryLink();
         steps.openIssuesTab();
-        steps.shuuldSeeIsssueWithNumber(ISSUES);
+        steps.shouldSeeIssueWithNumber(ISSUES);
     }
 }

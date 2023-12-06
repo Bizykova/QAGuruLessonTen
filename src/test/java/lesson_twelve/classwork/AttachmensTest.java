@@ -1,4 +1,4 @@
-package lessonTwelth.classwork;
+package lesson_twelve.classwork;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
